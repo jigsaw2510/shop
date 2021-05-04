@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Foto Foto Servicii Editare Foto si Produse</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<style type="text/css">
+		* {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+        	background-color: #FFF9FB;
+        }
+        main {
+            font-family: 'Roboto', sans-serif;
+            background-color: #FFF9FB;
+        }
+        .menu {
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            background-color: #FFF9FB;
+            margin: 0 !important;
+        }
+        nav a {
+            text-decoration: none;
+            color: #03A9F4;
+            background-color: #FFF9FB;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 1.5em;
+            font-weight: 500;
+        }
+        nav a:hover {
+            background-color: #03A9F4;
+            color: white;
+        }
+        .selected:hover {
+            color: #616161;
+            background-color: #FFF9FB;
+        }
+        .flex-container {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          margin: 20px;
+        }
+        .row {
+          display: flex;
+          flex-direction: row;
+          text-align: center;
+          flex-wrap: wrap;
+          line-height: 20px;
+          justify-content: center;
+          align-items: center;
+          background-color: #FFF9FB;
+        }
+        .column-2 {
+          flex: 50%;
+          max-width: 50%;
+        }
+        
+        section {
+        	margin-top: 200px;
+        }
+        section h3 {
+        	padding: 10px;
+        	color: #03A9F4;
+        	margin-top: 20px;
+        }
+        section p {
+        	margin-bottom: 10px;
+        }
+        .footer {
+            background: #616161;
+            padding: 15px;
+            text-align: center;
+            color: white;
+            margin-top: 200px;
+        }
+        @media (max-width: 800px) {
+            .flex-container {
+                flex-direction: column;
+                height: auto;
+                position: relative;
+            }
+            section {
+            	margin-top: 100px;
+            }
+        }
+        @media (max-width: 800px) {
+          .column-2 {
+            flex: 100%;
+            max-width: 100%;
+          }
+	</style>
+</head>
+<body>
+    <!-- Main Content -->
+    <main>
+    <!-- Header -->
+    <nav class="menu flex-container">
+        <a href="index.html">Home</a>
+        <a href="produse.html">Produse</a>
+        <a href="">Servicii</a>
+        <a href="">Despre noi</a>
+        <a href="contact.html" class="selected">Contact</a>
+    </nav>
+    <section class="row">
+    	<div class="column-2">
+    		<h3>Comenzi la nr. telefon:</h3>
+    		<p>0766591635</p>
+    		<h3>Comenzi pe e-mail:</h3>
+    		<p>gavrila_stefan_catalin@yahoo.com</p>
+    	</div>
+    	<div class="column-2">
+    		<h3>Adresa:</h3>
+    		<p>Str. Marului 2, Draganesti-Olt</p>
+	    	<h3>Program:</h3>
+	    	<p>Luni - Vineri : 9:00 - 19:00</p>
+	    	<p>Sambata : 9:00 - 14:00</p>
+	    	<p>Duminica : Inchis</p>
+    	</div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer clear">
+        &copy Foto Foto 2021. Toate drepturile rezervate | Servicii de webdesign oferite de catalingavrila.com
+    </footer>
+    </main>
+</body>
+</html>

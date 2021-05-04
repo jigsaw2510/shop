@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Zahara Boutique</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.png">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        main {
+            font-family: 'Roboto', sans-serif;
+            background-color: #FFF9FB;
+        }
+        .menu {
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            background-color: #FFF9FB;
+            margin: 0 !important;
+        }
+        nav a {
+            text-decoration: none;
+            color: #6A5B6E;
+            background-color: #FFF9FB;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 1.5em;
+            font-weight: 500;
+        }
+        nav a:hover {
+            background-color: #DF9A57;
+            color: white;
+        }
+        .selected {
+            color: #DF9A57;
+        }
+        .selected:hover {
+            color: #DF9A57;
+            background-color: #FFF9FB;
+        }
+        .flex-container {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          margin: 20px;
+        }
+        .hero {
+            padding: 0;
+            margin-top: 42px;
+        }
+        .hero img {
+            max-width: 100vw;
+            display: block;
+            border: none;
+            padding: 0;
+        }
+        #action {
+            height: 90px;
+            background-color: #FFF9FB;
+            line-height: 28px;
+            font-size: 1.2em;
+            margin-top: 30px;
+        }
+        #action a {
+            text-decoration: none;
+            color: #DF9A57;
+        }
+        #action a:hover {
+            text-decoration: underline;
+        }
+        .button {
+        	text-decoration: none;
+            background-color: #DF9A57;
+            color: white !important;
+            padding: 7px 12px;
+            border-radius: 6px;
+            font-size: 1.2em;
+            font-weight: 400;
+        }
+        .button:hover {
+            background-color: #DB8C43;
+            color: white;
+            text-decoration: none !important;
+        }
+        h1 {
+            background-color: #FFF9FB;
+            color: #6A5B6E;
+            font-weight: 300;
+            padding: 30px 30px 10px 30px;
+        }
+        #recomandate p {
+            margin-bottom: 30px;
+        }
+        .row {
+          display: flex;
+          flex-direction: row;
+          text-align: center;
+          flex-wrap: wrap;
+          line-height: 20px;
+          justify-content: center;
+          align-items: center;
+          background-color: #FFF9FB;
+        }
+        .column-2 {
+          flex: 50%;
+          max-width: 50%;
+        }
+        .column-4 {
+            flex: 25%;
+            max-width: 25%;
+        }
+        section img {
+            width: 100%;
+            height: 100%;
+        }
+        section img:hover {
+            background-color: #DF9A57;
+        }
+        section p {
+            padding: 10px;
+        }
+        .footer {
+            background: #6A5B6E;
+            padding: 15px;
+            text-align: center;
+            color: white;
+        }
+        @media (max-width: 800px) {
+            .flex-container {
+                flex-direction: column;
+                height: auto;
+                position: relative;
+            }   
+        }
+        @media (max-width: 800px) {
+            .button {
+                clear: both;
+                margin: 0 auto;
+            }
+        }
+        @media (max-width: 800px) {
+            .hero {
+                margin-top: 0;
+            }
+        }
+        @media (max-width: 800px) {
+          .column-4 {
+            flex: 50%;
+            max-width: 50%;
+          }
+          h1 {
+            text-align: center;
+          }
+        }
+        @media (max-width: 800px) {
+          .column-2 {
+            flex: 100%;
+            max-width: 100%;
+          }
+          #action {
+            padding: 20px;
+            height: auto;
+          }
+          #second-column {
+            margin-top: 15px;
+            margin-bottom: 15px;
+          }
+        }
+        @media (max-width: 600px) {
+          .column-4 {
+            flex: 100%;
+            max-width: 100%;
+          }
+        }
+    /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+    .flip-card {
+      background-color: transparent;
+      width: 300px;
+      height: 225px;
+      border: 3px solid black;
+      margin: 20px;
+      perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    }
+
+    .flip-card:hover {
+        cursor: pointer;
+    }
+    /* This container is needed to position the front and back side */
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    /* Do an horizontal flip when you move the mouse over the flip box container */
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    /* Position the front and back side */
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden; /* Safari */
+      backface-visibility: hidden;
+    }
+
+    /* Style the front side (fallback if image is missing) */
+    .flip-card-front {
+      background-color: #bbb;
+      color: black;
+    }
+
+    /* Style the back side */
+    .flip-card-back {
+      background-color: #DF9A57;
+      color: white;
+      transform: rotateY(180deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: column;
+    }
+    .flip-card-back p {
+        font-size: 25px;
+        text-align: center;
+    }
+    .flip-card-back h1 {
+        background-color: #DF9A57;
+        color: white;
+        text-align: center;
+        font-size: 2em;
+    }
+    </style>
+</head>
+<body>
+    <!-- Main Content -->
+    <main>
+    <!-- Header -->
+    <nav class="menu flex-container">
+        <a href="index.html" class="selected">Home</a>
+        <a href="produse.html">Produse</a>
+        <a href="">Servicii</a>
+        <a href="portfolio.html">Despre noi</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <!-- Hero -->
+    <div class="hero">
+        <img src="images/banner.jpg" id="banner">
+    </div>
+    <section class="row" id="action">
+    	<div class="column-2">
+    		<p>Servicii de editare foto si produse de cea mai inalta calitate. <br> Pentru a viziona toate produsele click <a href="produse.html">aici</a></p>
+    	</div>
+    	<div class="column-2" id="second-column">
+    		<a href="contact.html" class="button">Comanda acum!</a>
+    	</div>
+    </section>
+    <h1>Produse recomandate</h1>
+    <section class="row clear" id="recomandate">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="https://www.w3schools.com/w3images/paris.jpg" alt="Avatar">
+                </div>
+                <div class="flip-card-back">
+                  <h1>Martisor</h1>
+                  <p>13,99 RON</p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="images/wedding.jpg" alt="Avatar">
+                </div>
+                <div class="flip-card-back">
+                  <h1>Martisor</h1>
+                  <p>13,99 RON</p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="images/mountainskies.jpg" alt="Avatar">
+                </div>
+                <div class="flip-card-back">
+                  <h1>Martisor</h1>
+                  <p>13,99 RON</p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="images/nature.jpg" alt="Avatar">
+                </div>
+                <div class="flip-card-back">
+                  <h1>Martisor</h1>
+                  <p>13,99 RON</p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="images/ocean.jpg" alt="Avatar">
+                </div>
+                <div class="flip-card-back">
+                  <h1>Martisor</h1>
+                  <p>13,99 RON</p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="https://www.w3schools.com/w3images/paris.jpg" alt="Avatar">
+                </div>
+                <div class="flip-card-back">
+                  <h1>Martisor</h1>
+                  <p>13,99 RON</p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="images/arici.jpg" alt="Avatar">
+                </div>
+                <div class="flip-card-back">
+                  <h1>Martisor</h1>
+                  <p>13,99 RON</p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="https://www.w3schools.com/w3images/paris.jpg" alt="Avatar">
+                </div>
+                <div class="flip-card-back">
+                  <h1>Martisor</h1>
+                  <p>13,99 RON</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="flex-container">
+    <a href="produse.html" class="button clear">Vezi toate produsele</a>
+    </div>
+    <!-- Footer -->
+    <footer class="footer clear">
+        &copy Foto Foto 2021. Toate drepturile rezervate | Servicii de webdesign oferite de catalingavrila.com
+    </footer>
+    </main>
+</body>
+
+</html>
